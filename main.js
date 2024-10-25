@@ -2,8 +2,7 @@ let menu = document.querySelector('#menu-icon');
 let navlist = document.querySelector('.navlist');
 let navbar = document.querySelector("#head");
 let body = document.querySelector("body");
-let preloader = document.querySelector(".preloader");
-let darkmode  = document.querySelector("#darkmode");
+
 
 
 menu.onclick = () => {
