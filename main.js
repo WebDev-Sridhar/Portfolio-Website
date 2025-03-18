@@ -2,6 +2,32 @@ let menu = document.querySelector('#menu-icon');
 let navlist = document.querySelector('.navlist');
 let navbar = document.querySelector("#head");
 let body = document.querySelector("body");
+let avatar = document.querySelector(".avatar");
+let about = document.querySelector(".about");
+let heroImage = document.querySelector(".hero-image");
+let darkMode = document.querySelector(".hifi");
+
+darkMode.onclick = () => {
+    if(body.classList !== "light"){
+        body.classList.toggle('light');  
+        document.querySelector(".videofile").style.opacity = "0";
+        document.querySelector(".projects-section").style.backgroundImage = "none";
+    }
+    if(body.classList == ""){
+        document.querySelector(".videofile").style.opacity = "1";
+        document.querySelector(".projects-section").style.backgroundImage = "url(img/bg-img.svg)";
+
+
+    }
+
+
+}
+    about.addEventListener("click", () => {
+        if(heroImage.style.opacity == 0){
+        avatar.classList.add('animation');
+
+        }
+    });
 
 
 
@@ -13,11 +39,14 @@ window.onscroll = () => {
     navbar.classList.add("open");
     menu.classList.remove('bx-x');
     navlist.classList.remove('opennav');
+
+   
 }
 function setback() {
     navbar.classList.remove("open");
+    avatar.classList.remove('animation');
 }
-setInterval(setback, 5000);
+setInterval(setback, 3000);
 
 const sr = ScrollReveal({
     distance: '100px',

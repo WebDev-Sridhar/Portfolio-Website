@@ -21,6 +21,14 @@ body {
   --box-color: #010202;
   --gradient: linear-gradient(90deg, #432818, #473227, #8b7055);
 }
+body.light{
+  --text-color:#151515;
+  --btn-color: #131313;
+  --second-color: #118787;
+  --bg-color: hsl(0, 0%, 97%);
+  --another-color: hsl(120, 3%, 81%);
+  --box-color: #d8e2e2;
+}
 #home {
   width: 100%;
   min-height: 100vh;
@@ -33,9 +41,12 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  filter: blur(2px);
+  filter: blur(10px);
   z-index: -1;
+  background: rgb(215, 219, 218);
+  /* background: linear-gradient(135deg, rgba(1,4,3,1) 0%, rgb(6, 16, 14) 100%, rgb(3, 40, 47) 100%); */
 }
+
 header {
   position: fixed;
   width: 100%;
@@ -67,6 +78,10 @@ header {
   color: var(--second-color);
   z-index: 10;
 }
+.logo a{
+  text-decoration: none;
+  color: var(--text-color);
+}
 
 nav ul {
   list-style: none;
@@ -86,11 +101,16 @@ nav ul li a {
   transition: 0.5s;
   padding: 5px 8px;
   border-radius: 30px;
+  border-bottom: 2px solid transparent;
+  border-top:2px solid transparent ;
+  transition: 0.25s ease;
 }
 
 nav ul li a:hover {
-  background-color: var(--second-color);
-  color: var(--btn-color);
+  /* background-color: var(--second-color); */
+  color: var(--second-color);
+  border-bottom: 2px solid var(--second-color);
+  border-top:2px solid var(--second-color) ;
 }
 
 .nav-btn {
@@ -107,6 +127,21 @@ nav ul li a:hover {
 .nav-btn:hover {
   color: var(--second-color);
 }
+.hifi{
+  cursor: pointer;
+  animation: wavehand 1s infinite alternate;
+  transition: 0.25s;
+
+}
+@keyframes wavehand{
+  from{
+    transform: rotate(-20deg);
+  }
+  to{
+    transform: rotate(20deg);
+  }
+}
+
 .hero-text1 h1 {
   font-size: 68px;
   margin: 0;
@@ -132,10 +167,15 @@ nav ul li a:hover {
 
 .container {
   position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
   padding: 10px;
-  left: 12%;
+  /* left: 12%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
 }
 
 .container .hero-text1 .anime {
@@ -146,7 +186,67 @@ nav ul li a:hover {
   transition: 0.5s;
   animation: autotyping 1s infinite alternate;
 }
+.magicpattern { 
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(-45 .5 .5)%22%3E%3Cstop offset=%220%25%22 stop-color=%22%2308AEEA%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%232AF598%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M894.5 635Q822 770 698 844.5t-267.5 49q-143.5-25.5-160-165t-69.5-248q-53-108.5 35.5-196t212-139.5Q572 93 632 216t197.5 203.5Q967 500 894.5 635Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M894.5 635Q822 770 698 844.5t-267.5 49q-143.5-25.5-160-165t-69.5-248q-53-108.5 35.5-196t212-139.5Q572 93 632 216t197.5 203.5Q967 500 894.5 635Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 
+}
+.avatar.animation{
+  cursor: pointer;
+  animation: movedown .4s linear;
+  z-index: 100;
+}
+@keyframes movedown {
+  0% {
+    transform: translate(0px, 80px);
+    width: 100%;
+    height: 100%;
+  }
+  20% {
+    transform: translate(-100px, 200px);
+    width: 90%;
+    height: 90%;
+  }
+  40% {
+    transform: translate(-220px, 320px);
+    width: 80%;
+    height: 80%;
+  }
+  60% {
+    transform: translate(-350px, 500px);
+    width: 70%;
+    height: 70%;
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-400px, 680px);
+    width: 65%;
+    height: 65%;
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-540px, 780px);
+    width: 65%;
+    height: 65%;
+    opacity: 0;
+  }
+}
+
+.container .hero-img{
+width: 700px;
+height: 700px;
+
+}
+
+.container .hero-img img{
+  position: relative;
+  width: 90%;
+  height: 90%;
+}
 @keyframes autotyping {
   from {
     top: 5px;
@@ -160,7 +260,7 @@ nav ul li a:hover {
 .btn {
   display: inline-block;
   position: absolute;
-  background-color: var(--second-color);
+  background: linear-gradient(134.35deg, #b5d6d7, #6dc4cf, #2a99b1);
   color: var(--btn-color);
   font-family: "roboto", sans-serif;
   font-weight: 600;
@@ -170,10 +270,12 @@ nav ul li a:hover {
   border-radius: 5px;
   text-decoration: none;
   transition: 0.3s;
+  border: 2px solid var(--text-color);
 }
 
 .btn:hover {
   transform: translateY(8px);
+  background: linear-gradient(134.35deg, #b5d6d7, #6dc4cf, #2a99b1);
 }
 
 .btn:active {
@@ -194,10 +296,11 @@ nav ul li a:hover {
 
 #aboutsec {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   position: relative;
   min-height: 100vh;
   align-items: center;
+  justify-content: space-around;
   padding: 40px;
   background-color: var(--bg-color);
   z-index: 1;
@@ -205,9 +308,8 @@ nav ul li a:hover {
 
 .container1 {
   display: flex;
-  width: 100%;
+  width: 80%;
   align-items: center;
-  justify-content: space-around;
 }
 
 .container1 .hero-image {
@@ -217,7 +319,8 @@ nav ul li a:hover {
   height: 450px;
   border-radius: 20px;
   transition: 0.25s;
-  background-image: url(img/Firefly\ 20240821201749\ \(2\).png);
+  /* background-image: url(img/Firefly\ 20240821201749\ \(2\).png); */
+  background-image: url(img/Avatar.png);
   background-position: center;
   background-size: cover;
   animation: appeartop linear;
@@ -230,7 +333,7 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(83, 80, 78, 0.32);
+  background-color: rgba(0, 0, 0, 0.32);
   border-radius: 20px;
   z-index: 1;
 }
@@ -305,8 +408,9 @@ nav ul li a:hover {
 
 .container1 .hero-text p {
   font-family: "roboto", sans-serif;
-  letter-spacing: 1px;
-  line-break: auto;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  line-height: 1.5rem;
   padding-right: 10px;
   animation: appearleft linear;
   animation-timeline: view();
@@ -315,7 +419,7 @@ nav ul li a:hover {
 
 .container1 .hero-text span {
   color: var(--second-color);
-  font-size: 30px;
+  font-size: 40px;
 }
 
 #skillsec {
@@ -739,12 +843,21 @@ iframe {
 }
 .projects-container.one {
   padding-left: 20px;
+  /* animation: appearleft linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%; */
 }
 .projects-container.two {
   padding-right: 20px;
+  /* animation: appearright linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%; */
 }
 .projects-container.three {
   padding-left: 20px;
+  animation: appearleft linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .project-info p {
@@ -752,6 +865,7 @@ iframe {
   font-family: "poppins", sans-serif;
   text-align: left;
   letter-spacing: 0.5px;
+
 }
 
 .live-link-button {
