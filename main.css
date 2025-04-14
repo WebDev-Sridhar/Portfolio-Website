@@ -663,9 +663,15 @@ height: 700px;
 
 .skill:nth-child(6) i {
   color: #3b9cc2;
-  /* -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text; */
+
 }
+.skill:nth-child(7) i {
+  background: linear-gradient(135deg,#06549d 50%, #e5cb08 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
 
 .skill p {
   margin-top: 0;
@@ -721,6 +727,9 @@ height: 700px;
 }
 
 .bar5.load5 {
+  animation: animate 1.5s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+.bar6.load6 {
   animation: animate 1.5s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 

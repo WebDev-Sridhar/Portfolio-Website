@@ -80,6 +80,7 @@ function barLoad() {
     document.querySelector(".progress-bar.bar4").classList.add("load4");
     document.querySelector(".progress-bar.bar4").classList.add("load4");
     document.querySelector(".progress-bar.bar5").classList.add("load5");
+    document.querySelector(".progress-bar.bar6").classList.add("load6");
 }
 setInterval(barLoad, 500);
 function barUnload() {
@@ -88,6 +89,7 @@ function barUnload() {
     document.querySelector(".progress-bar.bar3").classList.remove("load3");
     document.querySelector(".progress-bar.bar4").classList.remove("load4");
     document.querySelector(".progress-bar.bar5").classList.remove("load5");
+    document.querySelector(".progress-bar.bar6").classList.remove("load6");
 }
 setInterval(barUnload, 5000);
 
