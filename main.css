@@ -225,13 +225,13 @@ height: 700px;
   margin-top: 20px;
   border-radius: 5px;
   text-decoration: none;
-  transition: 0.3s;
-  border: 2px solid var(--text-color);
+  transition: 0.5s;
+  /* border: 2px solid var(--text-color); */
 }
 
 .btn:hover {
-  transform: translateY(8px);
-  background: linear-gradient(134.35deg, #b5d6d7, #6dc4cf, #2a99b1);
+  transform: translateY(5px);
+  background: linear-gradient(134.35deg, #2a99b1, #689399, #b5d6d7);
 }
 
 .btn:active {
@@ -733,6 +733,8 @@ height: 700px;
   animation-range: entry 0% cover 40%;
 }
 .projects-container.two {
+    display: flex;
+  justify-content: right;
   padding-right: 80px;
     animation: appearright linear;
   animation-timeline: view();
@@ -750,7 +752,7 @@ height: 700px;
 .projects-container.four {
   display: flex;
   justify-content: right;
-  padding-left: 80px;
+  padding-right: 80px;
     animation: appearright linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
