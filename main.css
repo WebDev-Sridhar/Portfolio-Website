@@ -162,20 +162,15 @@ nav ul li a:hover {
   width: 100%;
   min-height: 100vh;
   padding: 40px;
-  position: relative;
+  /* position: relative; */
 }
-
 .container {
-  position: absolute;
   display: flex;
   justify-content: space-evenly;
   width: 100vw;
   height: 100vh;
   align-items: center;
   padding: 10px;
-  /* left: 12%;
-  top: 50%;
-  transform: translateY(-50%); */
 }
 
 .container .hero-text1 .anime {
@@ -195,46 +190,7 @@ nav ul li a:hover {
   background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(-45 .5 .5)%22%3E%3Cstop offset=%220%25%22 stop-color=%22%2308AEEA%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%232AF598%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M894.5 635Q822 770 698 844.5t-267.5 49q-143.5-25.5-160-165t-69.5-248q-53-108.5 35.5-196t212-139.5Q572 93 632 216t197.5 203.5Q967 500 894.5 635Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M894.5 635Q822 770 698 844.5t-267.5 49q-143.5-25.5-160-165t-69.5-248q-53-108.5 35.5-196t212-139.5Q572 93 632 216t197.5 203.5Q967 500 894.5 635Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 
 }
-.avatar.animation{
-  cursor: pointer;
-  animation: movedown .4s linear;
-  z-index: 100;
-}
-@keyframes movedown {
-  0% {
-    transform: translate(0px, 80px);
-    width: 100%;
-    height: 100%;
-  }
-  20% {
-    transform: translate(-100px, 200px);
-    width: 90%;
-    height: 90%;
-  }
-  40% {
-    transform: translate(-220px, 320px);
-    width: 80%;
-    height: 80%;
-  }
-  60% {
-    transform: translate(-350px, 500px);
-    width: 70%;
-    height: 70%;
-    opacity: 1;
-  }
-  80% {
-    transform: translate(-400px, 680px);
-    width: 65%;
-    height: 65%;
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(-540px, 780px);
-    width: 65%;
-    height: 65%;
-    opacity: 0;
-  }
-}
+
 
 .container .hero-img{
 width: 700px;
@@ -244,8 +200,8 @@ height: 700px;
 
 .container .hero-img img{
   position: relative;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
 }
 @keyframes autotyping {
   from {
@@ -287,16 +243,15 @@ height: 700px;
   height: auto;
 }
 
-.hero-image img {
+/* .hero-image img {
   width: 100%;
   height: auto;
   max-width: 100%;
   border-radius: 10%;
-}
+} */
 
 #aboutsec {
   display: flex;
-  /* flex-direction: column; */
   position: relative;
   min-height: 100vh;
   align-items: center;
@@ -319,8 +274,8 @@ height: 700px;
   height: 450px;
   border-radius: 20px;
   transition: 0.25s;
-  /* background-image: url(img/Firefly\ 20240821201749\ \(2\).png); */
-  background-image: url(img/Avatar.png);
+  background-image: url(img/Firefly\ 20240821201749\ \(2\).png);
+  /* background-image: url(img/Avatar.png); */
   background-position: center;
   background-size: cover;
   animation: appeartop linear;
@@ -405,6 +360,9 @@ height: 700px;
   scale: 1.1;
   cursor: pointer;
 }
+/* .container1 .hero-text{
+  width: 60%;
+} */
 
 .container1 .hero-text p {
   font-family: "roboto", sans-serif;
@@ -765,20 +723,38 @@ height: 700px;
 .projects-section h2 span {
   color: var(--text-color);
 }
+
 .projects-container.one {
   display: flex;
   justify-content: left;
   padding-left: 80px;
+    animation: appearleft linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 .projects-container.two {
   padding-right: 80px;
+    animation: appearright linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 .projects-container.three {
   display: flex;
   justify-content: left;
   padding-left: 80px;
+    animation: appearleft linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
+.projects-container.four {
+  display: flex;
+  justify-content: right;
+  padding-left: 80px;
+    animation: appearright linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
 .projects-container {
   display: flex;
   justify-content: right;
@@ -850,17 +826,17 @@ iframe {
   margin-bottom: 10px;
   text-align: left;
 }
-.projects-container.one {
+/* .projects-container.one {
   padding-left: 20px;
-  /* animation: appearleft linear;
+  animation: appearleft linear;
   animation-timeline: view();
-  animation-range: entry 0% cover 40%; */
+  animation-range: entry 0% cover 40%;
 }
 .projects-container.two {
   padding-right: 20px;
-  /* animation: appearright linear;
+  animation: appearright linear;
   animation-timeline: view();
-  animation-range: entry 0% cover 40%; */
+  animation-range: entry 0% cover 40%;
 }
 .projects-container.three {
   padding-left: 20px;
@@ -868,6 +844,12 @@ iframe {
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
 }
+.projects-container.four {
+  padding-left: 20px;
+  animation: appearright linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+} */
 
 .project-info p {
   color: var(--text-color);
@@ -1028,33 +1010,56 @@ iframe {
   }
   #home {
     position: relative;
+
   }
   .container {
-    left: 2%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding:0 20px ;
+  }
+  .hero{
+    padding: 30px 0;
+  }
+  .container .hero-text1 h1{
+    font-size: 35px;
+
+  }
+   .container .hero-text1 h2{
+    font-size: 26px;
+   }
+    .container .hero-text1 a{
+    font-size: 16px;
+    padding: 4px 8px;
+    margin: 10px 0;
+    }
+  .container .hero-img{
+    width: 420px;
+    height: 420px;
   }
 
   #aboutsec {
-    padding: 20px;
+    padding: 0;
   }
   .container1 {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
   }
-
-  .container1 .hero-image {
-    margin: 20px;
-    width: 250px;
-    height: 250px;
-  }
-
+    .container1 .hero-image{
+      min-width: 380px;
+      height: 280px;
+      background-image: url(/Portfolio-Website/img/Firefly\ 20240821201749\ \(2\).png);
+      margin: 10px 0;
+    }
   .container1 .hero-text p {
-    padding-right: 0px;
     margin-top: 5px;
+    font-size: 14px;
   }
 
   .container1 .hero-text span {
     color: var(--second-color);
-    font-size: 30px;
+    font-size: 28px;
   }
 
   #skillsec {
@@ -1062,12 +1067,18 @@ iframe {
     justify-content: center;
     align-items: center;
   }
+   #skillsec .container4 h1{
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   .skills-section {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
-    margin: 0;
+    margin: 10px 0;
   }
 
   .projects-container {
@@ -1126,6 +1137,9 @@ iframe {
   .navlist {
     display: flex;
   }
+nav ul li {
+  margin-left: 20px;
+}
   #home {
     position: relative;
   }
@@ -1133,10 +1147,9 @@ iframe {
     justify-content: space-around;
   }
 
-  .hero .container {
-    left: 5%;
-    top: 40%;
-    transform: translateY(-50%);
+  .container .hero-img{
+    width: 400px;
+    height: 400px;
   }
 
   #aboutsec {
@@ -1151,7 +1164,12 @@ iframe {
     gap: 30px;
     width: 100%;
   }
+    .container1 .hero-image{
+      min-width: 400px;
+      height: 280px;
+      background-image: url(/Portfolio-Website/img/Firefly\ 20240821201749\ \(2\).png);
 
+    }
   #skillsec {
     padding: 20px;
   }

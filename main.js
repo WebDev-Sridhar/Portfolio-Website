@@ -3,8 +3,6 @@ let navlist = document.querySelector('.navlist');
 let navbar = document.querySelector("#head");
 let body = document.querySelector("body");
 let avatar = document.querySelector(".avatar");
-let about = document.querySelector(".about");
-let heroImage = document.querySelector(".hero-image");
 let darkMode = document.querySelector(".hifi");
 
 darkMode.onclick = () => {
@@ -22,13 +20,6 @@ darkMode.onclick = () => {
 
 
 }
-    about.addEventListener("click", () => {
-        if(heroImage.style.opacity == 0){
-        avatar.classList.add('animation');
-
-        }
-    });
-
 
 
 menu.onclick = () => {
